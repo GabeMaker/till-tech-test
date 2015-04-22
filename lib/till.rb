@@ -9,11 +9,7 @@ class Till
   end
 
   def total
-    if @order == :cafelatte
-      PRICES["Cafe Latte"]
-    else
-      PRICES["Cappucino"]
-    end
+    PRICES[@order]
   end
 
 end
