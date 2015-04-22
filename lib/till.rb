@@ -16,4 +16,8 @@ class Till
     end
   end
 
+  def tax
+    (@total * 0.0864).round 2
+  end
+
 end

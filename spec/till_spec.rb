@@ -23,4 +23,10 @@ describe Till do
     expect(till).to respond_to(:order).with(2).arguments
   end
 
+  it 'can calculate tax of 8.64% on an order' do
+    till.order "Cappucino"
+    till.order "Cafe Latte"
+    expect(till.tax).to eq 0.74
+  end
+
 end
