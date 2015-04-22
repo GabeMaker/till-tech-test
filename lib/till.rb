@@ -4,12 +4,14 @@ PRICES = JSON.parse(file).first["prices"].first
 
 class Till
 
-  def order item
-    @order = item
+  attr_reader :total
+
+  def initialize
+    @total = 0
   end
 
-  def total
-    PRICES[@order]
+  def order item
+    @total += PRICES[item]
   end
 
 end
