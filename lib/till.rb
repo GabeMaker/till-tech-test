@@ -10,8 +10,10 @@ class Till
     @total = 0
   end
 
-  def order item
-    @total += PRICES[item]
+  def order item, quantity=1
+    quantity.times do
+      @total += PRICES[item]
+    end
   end
 
 end
