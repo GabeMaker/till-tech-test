@@ -8,6 +8,7 @@ feature 'As a customer I want to see the total cost (with tax) of what I order' 
     till.order "Blueberry Muffin"
     till.order "Choc Mudcake"
     expect(till.total).to eq 18.15
+    expect(till.tax).to eq 1.57
   end
 
   scenario 'When I order the items on the receipt example from test spec' do

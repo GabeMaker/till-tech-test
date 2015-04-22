@@ -29,4 +29,11 @@ describe Till do
     expect(till.tax).to eq 0.74
   end
 
+  it 'can track the quantity of each item ordered' do
+    till.order "Cappucino"
+    till.order "Cafe Latte"
+    till.order "Cappucino", 2
+    expect(till.quantities).to eq ({"Cappucino" => 3, "Cafe Latte" => 1 })
+  end
+
 end
