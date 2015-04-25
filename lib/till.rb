@@ -22,7 +22,9 @@ class Till
     (@total * 0.0864).round 2
   end
 
-
+  def give_change_for(ammount_paid)
+    (ammount_paid - @total).round 2
+  end
 
 
   def display_lines_demo_method

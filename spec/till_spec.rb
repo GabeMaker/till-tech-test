@@ -36,4 +36,10 @@ describe Till do
     expect(till.quantities).to eq ({"Cappucino" => 3, "Cafe Latte" => 1 })
   end
 
+  it 'can give change from £10' do
+    till.order "Cappucino"
+    till.order "Cafe Latte"
+    expect(till.give_change_for 10).to eq 1.4
+  end
+
 end
