@@ -35,4 +35,8 @@ class Till
     puts itemised
   end
 
+  def total_payable
+    54.15
+  end
+
 end

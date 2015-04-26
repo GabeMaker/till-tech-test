@@ -42,4 +42,12 @@ describe Till do
     expect(till.give_change_for 10).to eq 1.4
   end
 
+  it 'gives discount over £10' do
+    5.times do |x|
+      till.order "Tiramisu"
+    end
+    expect(till.total).to eq 57
+    expect(till.total_payable).to eq 54.15
+  end
+
 end
