@@ -1,4 +1,6 @@
 # Till Test
+*In progress*
+
 
 A practice tech test from Makers Academy. We will be modelling a till for a coffee shop
 
