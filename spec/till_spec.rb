@@ -17,4 +17,11 @@ describe Till do
     subject.add :cafe_latte
     expect(subject.total).to eq 4.75
   end
+
+  it 'can calculate the price of multiple items' do
+    subject.add :cafe_latte
+    subject.add :flat_white
+    subject.add :cappucino
+    expect(subject.total).to eq 13.35
+  end
 end
