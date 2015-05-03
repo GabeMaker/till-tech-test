@@ -2,7 +2,7 @@ require 'json'
 
 class Till
 
-  attr_reader :items
+  attr_reader :items, :change_given
 
   def initialize
     @items = []
@@ -18,6 +18,10 @@ class Till
     data_hash = JSON.parse(file).first["prices"].first
     items.each { |item| total += data_hash[item] }
     return total
+  end
+
+  def pay ammount
+    @change_given = ammount - total
   end
 
 end

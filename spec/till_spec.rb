@@ -24,4 +24,10 @@ describe Till do
     subject.add "Cappucino"
     expect(subject.total).to eq 13.35
   end
+
+  it 'can give change' do
+    subject.add "Cafe Latte"
+    subject.pay 10
+    expect(subject.change_given).to eq 5.25
+  end
 end
