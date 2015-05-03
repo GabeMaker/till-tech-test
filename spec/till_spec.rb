@@ -30,4 +30,9 @@ describe Till do
     subject.pay 10
     expect(subject.change_given).to eq 5.25
   end
+
+  it 'can calculate tax of 8.64% on an order' do
+    subject.add "Cafe Latte"
+    expect(subject.tax).to eq 0.41
+  end
 end

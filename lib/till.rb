@@ -24,4 +24,9 @@ class Till
     @change_given = ammount - total
   end
 
+  def tax
+    tax = total * 0.0864
+    tax.round 2
+  end
+
 end
