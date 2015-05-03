@@ -2,26 +2,26 @@ require 'till'
 
 describe Till do
   it 'can add an item' do
-    subject.add :cafe_latte
-    expect(subject.items).to eq [:cafe_latte]
+    subject.add "Cafe Latte"
+    expect(subject.items).to eq ["Cafe Latte"]
   end
 
   it 'can add multiple items' do
-    subject.add :cafe_latte
-    subject.add :flat_white
-    subject.add :cappucino
-    expect(subject.items).to eq [:cafe_latte, :flat_white, :cappucino]
+    subject.add "Cafe Latte"
+    subject.add "Flat White"
+    subject.add "Cappucino"
+    expect(subject.items).to eq ["Cafe Latte", "Flat White", "Cappucino"]
   end
 
   it 'can calculate the price of one item' do
-    subject.add :cafe_latte
+    subject.add "Cafe Latte"
     expect(subject.total).to eq 4.75
   end
 
   it 'can calculate the price of multiple items' do
-    subject.add :cafe_latte
-    subject.add :flat_white
-    subject.add :cappucino
+    subject.add "Cafe Latte"
+    subject.add "Flat White"
+    subject.add "Cappucino"
     expect(subject.total).to eq 13.35
   end
 end

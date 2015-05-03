@@ -14,16 +14,9 @@ class Till
 
   def total
     total = 0
-
     file = File.read 'shop.json'
     data_hash = JSON.parse(file).first["prices"].first
-
-    items.each do |item|
-      total += data_hash["Cafe Latte"] if item == :cafe_latte
-      total += data_hash["Flat White"] if item == :flat_white
-      total += data_hash["Cappucino"] if item == :cappucino
-    end
-
+    items.each { |item| total += data_hash[item] }
     return total
   end
 
