@@ -21,14 +21,8 @@ class Till
   end
 
   def pay ammount
-    @change_given = (ammount - total).round 2
-    if total > 50
-      discount = (total * 0.05).round 2
-      puts @change_given
-      puts discount
-      @change_given += discount
-      @change_given = @change_given.round 2
-    end
+    total > 50 ? discount = total * 0.05 : discount = 0
+    @change_given = (ammount - total + discount).round 2
   end
 
   def tax
