@@ -35,4 +35,12 @@ describe Till do
     subject.add "Cafe Latte"
     expect(subject.tax).to eq 0.41
   end
+
+  it 'can give a discount of 5% when over £50' do
+    11.times do subject.add "Cafe Latte"
+    end
+    expect(subject.total).to eq 52.25
+    subject.pay 50
+    expect(subject.change_given).to eq 0.36
+  end
 end
